@@ -86,7 +86,47 @@
 	</main>
 
 	<script>
+		//Challenge 1. Write a script that goes in and applies a sub-menu to the hide-menu class.
+		//We want to apply that to all of the unordered lists so they have class hide-menu on them. 
+
+		var subMenu = document.querySelectorAll("ul li ul");
+
+		for(var eachMenu of subMenu){
+			eachMenu.className = "hide-menu";
+		}
+
+		//other solutions:
+
+		/* for(var i=0; i<subMenu.length; i++){
+			subMenu[i].className = 'hide-menu';
+		} */ 
+
+		/* subMenu.forEach(function(eachMenu){
+			eachMenu.className = "hide-menu";
+		}); */
+
+		//________________________________________________________________________________________
+		//Challenge 2. Add a click handler to the main links. 
+		//Gather the links with the class menu link when you click on them, we want something to happen. 
+		//For now, just pass the event object and prevent the default behavior from that would result from clicking the link
+
+		var mainLinks = document.querySelectorAll('.menulink');
+
+		for(var i=0; i<mainLinks.length; i++){
+			mainLinks[i].addEventListener('click', function(e){
+				e.preventDefault();
+				
+				//We will use the 'this' keyword to help let us know which link we clicked 
+				var thisMenu = this;
+				alert(thisMenu.innerHTML);
+			});
+		}
+
+		//________________________________________________________________________________________
+		//Challenge 3. 
 		
+		
+
 	</script>
 
 </body>
