@@ -110,7 +110,7 @@
 		//Gather the links with the class menu link when you click on them, we want something to happen. 
 		//For now, just pass the event object and prevent the default behavior from that would result from clicking the link
 
-		var mainLinks = document.querySelectorAll('.menulink');
+		/*var mainLinks = document.querySelectorAll('.menulink');
 
 		for(var i=0; i<mainLinks.length; i++){
 			mainLinks[i].addEventListener('click', function(e){
@@ -120,12 +120,83 @@
 				var thisMenu = this;
 				alert(thisMenu.innerHTML);
 			});
-		}
+		}*/
+
 
 		//________________________________________________________________________________________
-		//Challenge 3. 
-		
-		
+		//Challenge 3. Access the unordered list that comes after the anchor tag. 
+		//To do that you need to go the parent element and find the unordered list inside it.
+		//Can you alter the line defing thisMenu to get the right element?
+
+		/*var mainLinks = document.querySelectorAll('.menulink');
+
+		for(var i=0; i<mainLinks.length; i++){
+			mainLinks[i].addEventListener('click', function(e){
+				e.preventDefault();
+			
+				var thisMenu = this.parentNode.querySelector('ul');
+				console.log(thisMenu.innerHTML);
+			});
+		}*/
+
+
+		//________________________________________________________________________________________
+		//Challenge 4. Change the class on the element to "show-menu"
+
+		/*var mainLinks = document.querySelectorAll('.menulink');
+
+		for(var i=0; i<mainLinks.length; i++){
+			mainLinks[i].addEventListener('click', function(e){
+				e.preventDefault();
+			
+				var thisMenu = this.parentNode.querySelector('ul');
+				thisMenu.className = "show-menu";
+			});
+		}*/
+
+
+		//________________________________________________________________________________________
+		//Challenge 5. If the menu has the class "hide-menu" set it to "show-menu" otherwise, set it to "hide-menu"
+
+		/*var mainLinks = document.querySelectorAll('.menulink');
+
+		for(var i=0; i<mainLinks.length; i++){
+			mainLinks[i].addEventListener('click', function(e){
+				e.preventDefault();
+			
+				var thisMenu = this.parentNode.querySelector('ul');
+			
+				if(thisMenu.classList.contains('hide-menu')){
+					thisMenu.className = "show-menu";
+				}
+				else{
+					thisMenu.className = "hide-menu";
+				}
+			});
+		}*/
+
+
+		//________________________________________________________________________________________
+		//Challenge 6. Add a loop to the if statement that closes all the sub menus BEFORE showing
+		//the sub menu that goes with the parent menu that was clicked.
+
+		var mainLinks = document.querySelectorAll('.menulink');
+
+		for(var i=0; i<mainLinks.length; i++){
+			mainLinks[i].addEventListener('click', function(e){
+				e.preventDefault();
+			
+				var thisMenu = this.parentNode.querySelector('ul');
+			
+				if(thisMenu.classList.contains('hide-menu')){
+					thisMenu.className = "show-menu";
+				}
+				else{
+					thisMenu.className = "hide-menu";
+				}
+			});
+		}
+
 
 	</script>
 
