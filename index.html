@@ -6,6 +6,7 @@
 	<title>Menu Example</title>
 
 	<link href="styles.css" rel="stylesheet">
+	<script src="script.js" defer></script>
 </head>
 
 <body>
@@ -89,11 +90,11 @@
 		//Challenge 1. Write a script that goes in and applies a sub-menu to the hide-menu class.
 		//We want to apply that to all of the unordered lists so they have class hide-menu on them. 
 
-		var subMenu = document.querySelectorAll("ul li ul");
+		/*var subMenu = document.querySelectorAll("ul li ul");
 
 		for(var eachMenu of subMenu){
 			eachMenu.className = "hide-menu";
-		}
+		}*/
 
 		//other solutions:
 
@@ -180,7 +181,7 @@
 		//Challenge 6. Add a loop to the if statement that closes all the sub menus BEFORE showing
 		//the sub menu that goes with the parent menu that was clicked.
 
-		var mainLinks = document.querySelectorAll('.menulink');
+		/*var mainLinks = document.querySelectorAll('.menulink');
 
 		for(var i=0; i<mainLinks.length; i++){
 			mainLinks[i].addEventListener('click', function(e){
@@ -189,14 +190,56 @@
 				var thisMenu = this.parentNode.querySelector('ul');
 			
 				if(thisMenu.classList.contains('hide-menu')){
+					for(var eachMenu of subMenu){
+						eachMenu.className = "hide-menu";
+					}
 					thisMenu.className = "show-menu";
 				}
 				else{
 					thisMenu.className = "hide-menu";
 				}
 			});
-		}
+		}*/
 
+	
+	//________________________________________________________________________________________
+	//Challenge 7.The loop is now used twice. Put it in a function called hideSubmenus() and then 
+	//call that funtion twice. Once at the top of the script and indise the if statement as well.
+
+	/*var subMenu = document.querySelectorAll("ul li ul");
+
+	function hideSubmenus() {
+		for (var eachMenu of subMenu) {
+			eachMenu.className = "hide-menu";
+		}
+	}
+
+	hideSubmenus();
+
+	var mainLinks = document.querySelectorAll('.menulink');
+
+	for (var i = 0; i < mainLinks.length; i++) {
+		mainLinks[i].addEventListener('click', function(e) {
+			e.preventDefault();
+
+			var thisMenu = this.parentNode.querySelector('ul');
+
+			if (thisMenu.classList.contains('hide-menu')) {
+				hideSubmenus(); // Call the function here to hide all submenus
+				thisMenu.className = "show-menu"; // Show the clicked submenu
+			} else {
+				thisMenu.className = "hide-menu";
+			}
+		});
+	}*/
+
+
+	//________________________________________________________________________________________
+	//Challenge 8.Put the script in a seperate script file. 
+	//Add an IIFE closure
+	//Use the "use strict" directive
+	//Change all the vairable declaratons to const or let 
+	//Link the script in the head of the page and be sure to add the defer property in the script tag 
 
 	</script>
 
